@@ -14,7 +14,7 @@ form.addEventListener('submit',function(e){
 
         method:'Post',
         body:JSON.stringify({
-            titile:name,
+            title:name,
             body:body,
             id:id
         }),
@@ -27,7 +27,13 @@ form.addEventListener('submit',function(e){
     })
     .then(function(data){
         console.log(data);
+        let results =document.getElementById('results');
+
+        results.innerHTML=`<p> The title what to do is ${data.title}</p>
+        <p> The body of the todo is ${data.body}</p>
+        <p> Id of given input ${data.id}`
     })
+
         
 })
 
